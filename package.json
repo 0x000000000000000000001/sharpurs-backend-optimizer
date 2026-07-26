@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install": "spago install",
+    "build": "spago build",
+    "test": "spago test -p backend-es",
+    "format": "purs-tidy format-in-place src backend-es/src backend-es/test/*.purs",
+    "format:check": "purs-tidy check src backend-es/src backend-es/test/*.purs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.0",
+    "purescript": "github:0x000000000000000000001/purescript-npm",
+    "purs-tidy": "^0.11.1",
+    "spago": "^0.93.45"
+  }
+}
