@@ -144,7 +144,7 @@ decodeExprType json = decodeStr <|> decodeObj
               adtObj <- decodeJObject adtJson
               adtPath <- getField (decodeArray decodeString) adtObj "path"
               adtArgs <- getField (decodeArray decodeExprType) adtObj "args"
-              pure (ADT adtPath adtArgs)
+              pure (ADT (intercalate "." adtPath) adtPath adtArgs)
             Nothing -> case Object.lookup "TypeVar" obj of
               Just tvJson -> do
                 tv <- decodeString tvJson

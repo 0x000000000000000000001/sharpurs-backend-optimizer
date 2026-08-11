@@ -65,7 +65,7 @@ data ExprType
   | Array ExprType
   | Func (Array ExprType) ExprType
   | Record (Array (Tuple String ExprType))
-  | ADT (Array String) (Array ExprType)
+  | ADT String (Array String) (Array ExprType)
   | TypeVar String
   | Any
 
